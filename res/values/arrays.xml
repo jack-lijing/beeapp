@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="menu">
+        <item >用户基本信息</item>
+        <item >蜂场基本信息</item>
+        <item >蜂场年度信息</item>
+        <item >日常操作信息</item>
+        <item >摇蜜信息采集</item>
+        <item >数据上传管理</item>
+    </string-array>
+    
+    <string-array name="user">
+        <item >姓名</item>
+        <item >电话</item>
+        <item >身份证</item>
+        <item >蜂场</item>
+        <item >地址</item>
+        <item >规模</item>
+    </string-array>
+    <string-array name="product">
+        <item >honey</item>
+        <item >beewax</item>
+    </string-array>
+    <string-array name="beeclass">
+        <item >黄蜂</item>
+        <item >蜜蜂</item>
+    </string-array>
+    
+</resources>

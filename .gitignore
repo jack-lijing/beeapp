@@ -1,0 +1,5 @@
+gen/
+bin/
+*.class
+R.java
+BuildConfig.java

@@ -1,0 +1,77 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res/com.example.bee_demo"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <android.support.v7.widget.GridLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:columnCount="1"
+        app:rowCount="@integer/row" >
+
+    	<EditText
+    	    android:id="@+id/xm"
+    	    android:layout_width="fill_parent"
+    	    android:layout_height="wrap_content"
+    	    android:enabled="false"
+    	    android:hint="输入姓名"
+    	    android:inputType="text" >
+
+        <requestFocus />
+    	</EditText>
+    	<EditText
+            android:id="@+id/dh"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:enabled="false"
+            android:hint="输入号码" />
+    	<EditText
+            android:id="@+id/sfz"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:enabled="false"
+            android:hint="输入身份证号码" />
+    	<EditText
+            android:id="@+id/fcmc"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:enabled="false"
+            android:hint="输入蜂场名称" />
+    	<EditText
+            android:id="@+id/fcdz"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:enabled="false"
+            android:hint="输入蜂场地址" />
+
+    	<EditText
+    	    android:id="@+id/fcgm"
+    	    android:layout_width="fill_parent"
+    	    android:layout_height="wrap_content"
+    	    android:hint="输入蜂场规模"
+    	    android:enabled="false"
+    	    android:inputType="text" />
+    </android.support.v7.widget.GridLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="编辑" 
+            android:onClick="saveUserInfo"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
