@@ -16,7 +16,7 @@
     	    android:layout_width="fill_parent"
     	    android:layout_height="wrap_content"
     	    android:enabled="false"
-    	    android:hint="输入姓名"
+    	    android:hint="输入lsp大白瓷"
     	    android:inputType="text" >
 
         <requestFocus />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">bee_demo</string>
+    <string name="app_name">蜂蜜采集</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="hello_world">lsp@caas.net.cn!</string>
     <string name="name">刘升平</string>

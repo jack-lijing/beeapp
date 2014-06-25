@@ -1,10 +1,18 @@
 package com.example.bee_demo;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -16,11 +24,6 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
 
 /**
  * Activity which displays a login screen to the user, offering registration as
@@ -59,6 +62,7 @@ public class LoginActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
+		Log.i(util.DEBUG_TAG, "LoginActivity starting");
 		setContentView(R.layout.activity_login);
 
 		// Set up the login form.
@@ -256,14 +260,34 @@ public class LoginActivity extends Activity {
 	private final static String LOGINURL = "http://172.20.8.208/login";
 	public boolean checkAccountHTTP(String account, String passwd ) throws IOException
 	{
-		/*
+		
 			URL text = new URL(LOGINURL);
 			InputStream isText = text.openStream();
-			byte[] bText = new byte[250];
+			byte[] bText = new byte[10];
 			int readSize = isText.read(bText);
-			Log.i("Bee_Demo", bText.toString());
+			Log.i(util.DEBUG_TAG, "readsize = " + readSize );
+			Log.i(util.DEBUG_TAG, "READ : " + new String(bText));
 			isText.close();
-			*/	
+			
+			HttpURLConnection http = (HttpURLConnection)text.openConnection();
+			Log.i(util.DEBUG_TAG, "length " + http.getContentLength());
+			Log.i(util.DEBUG_TAG, "content " +http.getContent() );
+			
+			
+		return true;
+	}
+	
+	public boolean checkNetwork()
+	{
+		ConnectivityManager cm = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo wni = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+		boolean isWifiAvail = wni.isAvailable();
+		boolean isWifiConn = wni.isConnected();
+		
+		NetworkInfo mni = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+		boolean isMobileAvail = mni.isAvailable();
+		boolean isMobileConn	= mni.isConnected();
+		
 		return true;
 	}
 }
